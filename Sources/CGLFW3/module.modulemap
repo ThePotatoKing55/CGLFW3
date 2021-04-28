@@ -1,0 +1,5 @@
+module glfw3 [system] {
+    umbrella header "include/GLFW/glfw3.h"
+    link "glfw3"
+    export *
+}

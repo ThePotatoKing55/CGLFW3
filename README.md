@@ -8,7 +8,7 @@ While this is
 
 Add to your `Package.swift` dependencies:
 
-    .package(url: "https://github.com/thepotatoking55/CGLFW3.git", upToNextMajor(from: "3.3.4"))
+    .package(url: "https://github.com/thepotatoking55/CGLFW3.git", .upToNextMajor(from: "3.3.4"))
 
 ## Updating
 

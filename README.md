@@ -12,8 +12,8 @@ Add to your `Package.swift` dependencies:
     
 In your main code:
 
-    import CGLFW3
+    import glfw3
 
 ## Updating
 
-I can't guarantee this will always be up-to-date with the latest version of GLFW, but you can replace the headers in `Sources/GLFW/include/GLFW/` and the static library file at `Sources/GLFW/lib/libglfw3.a`. The macOS static library binaries can be downloaded [from the GLFW website](https://glfw.org/download).
+I can't guarantee this will always be up-to-date with the latest version of GLFW, but you can replace the headers in `Sources/CGLFW3/include/GLFW/` and the static library file at `Sources/CGLFW3/lib/libglfw3.a`. The macOS static library binaries can be downloaded [from the GLFW website](https://glfw.org/download).

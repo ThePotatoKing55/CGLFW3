@@ -2,13 +2,17 @@
 
 Links the [GLFW](https://www.glfw.org) static library to your Swift Package.
 
-While this is 
+This package can work on its own as a C library, but it was created as a base for the wrapper library [SwiftGLFW](https://github.com/thepotatoking55/SwiftGLFW).
 
 ## Installation
 
 Add to your `Package.swift` dependencies:
 
     .package(url: "https://github.com/thepotatoking55/CGLFW3.git", .upToNextMajor(from: "3.3.4"))
+    
+In your main code:
+
+    import CGLFW3
 
 ## Updating
 

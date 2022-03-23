@@ -6,13 +6,33 @@ This package can work on its own, but it was created as a base for [SwiftGLFW](h
 
 ## Getting Started
 
-Add to your dependecies in `Package.swift`:
+SwiftPM doesn't support unsafe flags with semantic versioned packages, so add this to your dependecies in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/thepotatoking55/CGLFW3.git", .upToNextMajor(from: "3.4.0"))
+.package(url: "https://github.com/thepotatoking55/CGLFW3.git", branch: "main")
 ```
 
 From there, you can just import it with `import CGLFW3` and use it like normal.
+
+## Cross-Platform Support
+
+To expose platform-native functions such as `glfwGetCocoaWindow`, add the following C settings to your target:
+
+```swift
+.target(
+    name: "ExampleTarget",
+    dependencies: ["CGLFW3"],
+    cSettings: [
+        .define("GLFW_EXPOSE_NATIVE_WIN32", .when(platforms: [.windows])),
+        .define("GLFW_EXPOSE_NATIVE_WGL", .when(platforms: [.windows])),
+        .define("GLFW_EXPOSE_NATIVE_COCOA", .when(platforms: [.macOS])),
+        .define("GLFW_EXPOSE_NATIVE_NSGL", .when(platforms: [.macOS])),
+        .define("GLFW_EXPOSE_NATIVE_X11", .when(platforms: [.linux]))
+    ]
+)
+```
+
+I don't have a computer running Linux and Windows support for SwiftPM is rudimentary, so this will probably still take some work to get ported to non-Mac platforms.
 
 ## Hello World
 

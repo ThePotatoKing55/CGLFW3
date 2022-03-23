@@ -9,7 +9,7 @@ This package can work on its own, but it was created as a base for [SwiftGLFW](h
 Add to your dependecies in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/thepotatoking55/CGLFW3", .branch("main"))
+.package(url: "https://github.com/thepotatoking55/CGLFW3.git", .upToNextMajor(from: "3.4.0"))
 ```
 
 From there, you can just import it with `import CGLFW3` and use it like normal.
